@@ -1,0 +1,32 @@
+﻿using CMC.Core.Enums;
+using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CMC.Data.Models
+{
+    public class User : IdentityUser
+    {
+        [Required]
+        public string FullName { get; set; }
+        public DateTime? DOB { get; set; } //تاريخ الميلاد
+        public string ImageUrl { get; set; }
+        public UserType UserType { get; set; }
+        public string FCMToken { get; set; }
+        public List<Post> Posts { get; set; }
+        public List<Track> Tracks { get; set; }
+        public List<Advertisement> Advertisements { get; set; }
+        public List<Email> Emails { get; set; }
+        public List<Notifications> Notifications { get; set; }
+        public bool IsDelete { get; set; }
+        public DateTime CreateAt { get; set; }
+        public string CteateBy { get; set; }
+        public DateTime? UpdateAt { get; set; }
+        public string UpdateBy { get; set; }
+       
+    }
+}
